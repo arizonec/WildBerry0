@@ -304,13 +304,24 @@
                             <h2>Способ оплаты</h2>
                             <button type="button">Изменить</button>
                         </div>
-                        <div class="pay__card"></div>
-                        <label></label>
+                        <div class="pay__card">
+                            <div class="card__system"><img src="/src/assets/images/mir.svg" alt=""></div>
+                            <div class="card__number">1234 56•• •••• 1234</div>
+                            <div class="card__date">01/30</div>
+                        </div>
+                        <div class="pay__info">Спишем оплату c краты при получении</div>
                     </div>
                     <div class="bucket__receiver receiver">
                         <h2>Получатель</h2>
-                        <div class="receiver__name"></div>
-                        <div class="receiver__more"></div>
+                        <div class="receiver__name name">
+                            <input class="name__name" type="text" placeholder="Имя">
+                            <input class="name__second-name" type="text" placeholder="Фамилия">
+                        </div>
+                        <div class="receiver__more more">
+                            <input class="more-email" type="email" placeholder="Почта">
+                            <input class="more-tel" type="tel" placeholder="+7 (988) 123-45-67">
+                            <input class="more-number" type="number" placeholder="ИНН">
+                        </div>
                     </div>
                 </div>
                 <div class="main__bill"></div>

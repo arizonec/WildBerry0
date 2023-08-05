@@ -1,8 +1,75 @@
 .bucket__pay {
+    background-color: var(--white);
+    padding: 17px 24px 24px 24px;
+    border-radius: 16px;
+    margin-bottom: 16px;
 }
 .pay {
 }
 .pay__edit {
+    display: flex;
+    margin-bottom: 16px;
+
+    h2 {
+        max-width: 755px;
+        width: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -1%;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 7px 0 0 0;
+        width: 78px;
+        color: var(--magenta);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: right;
+        background: transparent;
+        cursor: pointer;
+    }
 }
 .pay__card {
+    display: flex;
+    margin-bottom: 8px;
+
+    .card__system {
+        background-color: var(--smoky);
+        border-radius: 4px;
+        width: 32px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        
+        img {
+            width: 30px;
+            height: 9.33px;
+        }
+    }
+
+    .card__number {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-right: 12px;
+    }
+
+    .card__date {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
 }
+
+.pay__info {
+    color: var(--light-gray);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+}
+

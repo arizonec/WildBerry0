@@ -1,8 +1,73 @@
 .bucket__receiver {
+    background-color: var(--white);
+    padding: 17px 24px 24px 24px;
+    border-radius: 16px;
+
+    h2 {
+        max-width: 755px;
+        width: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -1%;
+        margin-right: 10px;
+        margin-bottom: 16px;
+    }
 }
 .receiver {
 }
+
 .receiver__name {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+}
+.name {
+
+}
+.name__name {
+    flex: 1 1 50%;
+    margin-right: 24px;
+    border-bottom: 2px solid var(--light-gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.name__second-name {
+    flex: 1 1 50%;
+    width: 100%;
+    border-bottom: 2px solid var(--light-gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }
 .receiver__more {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+}
+.more {
+}
+.more-email {
+    flex: 1 1 33.3%;
+    margin-right: 24px;
+    border-bottom: 2px solid var(--light-gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.more-tel {
+    flex: 1 1 33.3%;
+    margin-right: 24px;
+    border-bottom: 2px solid var(--light-gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.more-number {
+    flex: 1 1 33.3%;
+    border-bottom: 2px solid var(--light-gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }

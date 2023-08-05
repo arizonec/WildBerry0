@@ -1,4 +1,5 @@
 .bucket__delivery {
+    margin-bottom: 16px;
     background-color: var(--white);
     padding: 16px 0 24px 0;
     border-radius: 16px;
@@ -209,7 +210,7 @@
             left: 1px;
             margin-right: 10px;
             border-radius: 50%;
-            background: linear-gradient(to left, rgba(12, 211, 139, 1), rgba(12, 180, 119, 1));
+            background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
 
         &::before {
             content: '';
@@ -243,7 +244,8 @@
         padding: 2px 0 0 0;
 
         a {
-            
+           color: var(--green);
+           border-bottom: 1px dashed var(--light-green);
         }
     }
 }
