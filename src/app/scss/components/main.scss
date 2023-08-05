@@ -1,8 +1,7 @@
-@forward 'available';
-
 .main {
     font-family: var(--font-segoe);
     color: var(--black);
+    height: 100%;
     background-color: var(--smoky);
 }
 .main__wrapper {
@@ -26,22 +25,3 @@
 }
 .bucket {
 } 
-
-.bucket__pay {
-}
-.pay {
-}
-.pay__edit {
-}
-.pay__card {
-}
-.bucket__receiver {
-}
-.receiver {
-}
-.receiver__name {
-}
-.receiver__more {
-}
-.main__bill {
-}
