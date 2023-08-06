@@ -1,5 +1,11 @@
+@use '../util/' as *;
+
 .bucket__available {
     margin-bottom: 40px;
+
+    @include breakpoint(phone) {
+        margin-top: -10px;
+    }
 }
 .available {
 }
@@ -11,6 +17,10 @@
     position: relative;
     height: 24px;
     margin-bottom: 16px;
+
+    @include breakpoint(phone){
+        max-width: 288px;
+    }
 
     &__checkbox {
         flex: 1 1 auto;
@@ -51,6 +61,10 @@
             height: 2px;
             transform: rotate(45deg);
             background-color: var(--gray);
+
+            @include breakpoint(phone) {
+                right: 5px;
+            }
         }
 
         &::after {
@@ -62,16 +76,31 @@
             height: 2px;
             transform: rotate(-45deg);
             background-color: var(--gray);
+
+            @include breakpoint(phone) {
+                right: 12px;
+            }
         }
     }
 }
 .available__choose-item {
     border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+
+    @include breakpoint(phone) {
+        max-width: 288px;
+    }
+
 }
 .available__item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+        margin-bottom: 60px;
+        max-width: 288px;
+    }
 }
 .item {
 }
@@ -86,6 +115,12 @@
     & img {
         border-radius: 8px;
         padding: 0 0 0 34px;
+
+        @include breakpoint(phone) {
+            width: 80px;
+            height: 106px;
+            padding: 0;
+        }
     }
 
     & input {
@@ -104,6 +139,33 @@
         background-image: url('/src/assets/images/Input.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
+
+        @include breakpoint(phone) {
+           top: 4px;
+           left: 4px;
+        }
+
+    }
+
+    &::after {
+        display: none;
+        content: '56';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 4px;
+        bottom: 4px;
+        border-radius: 6px;
+        background-color: var(--smoky);
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        @include breakpoint(phone) {
+           display: block;
+        }
+
     }
 }
 .item__info {
@@ -128,6 +190,9 @@
     margin-right: 16px;
 }
 .info__size {
+    @include breakpoint(phone) {
+        display: none;
+    }
 }
 .info__location {
     font-weight: 400px;
@@ -145,6 +210,10 @@
     font-size: 13px;
     line-height: 16px;
     color: var(--light-gray);
+
+    @include breakpoint(phone) {
+        display: none;
+    }
 
     p {
         margin-right: 8px;
@@ -171,6 +240,11 @@
     padding: 3px 0 0 0;
     width: 100px;
     height: 44px;
+
+    @include breakpoint(phone) {
+        display: flex;
+        width: 288px;
+    }
 }
 .count {
 }
@@ -188,6 +262,11 @@
     margin-bottom: 8px;
     position: relative;
     padding: 8px 3px 13px 4px;
+
+    @include breakpoint(phone) {
+        width: 50px;
+        height: 32px;
+    }
     
 
     &-minus{
@@ -198,10 +277,24 @@
         width: 9px;
         height: 1px;
         background: var(--rulers);
+
+        @include breakpoint(phone) {
+            left: 14px;
+            top: 50%;
+            font-weight: 400;
+        }
     }
 
     &-num{
         color: var(--black);
+        
+        @include breakpoint(phone) {
+            font-size: 14px;
+            padding: 4px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &-plus{
@@ -217,6 +310,11 @@
         font-weight: 400;
         transform: translateX(-50%);
         color: var(--rulers);
+
+        @include breakpoint(phone) {
+            right: 14px;
+            top: 10%;
+        }
     }
 
     .active-color {
@@ -233,6 +331,10 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
+
+    @include breakpoint(phone) {
+        white-space: nowrap;
+    }
 }
 .count__liked {
     display: flex;
@@ -240,11 +342,19 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 3px;
+
+    @include breakpoint(phone) {
+        justify-content: center;
+    }
 }
 .count__like {
     margin-right: 18px;
     width: 20px;
     height: 20px;
+
+    @include breakpoint(phone) {
+        margin-right: 20px;
+    }
 }
 .count__remove {
     width: 16px;
@@ -253,6 +363,10 @@
 .item__price {
     width: 110px;
     height: 44px;
+
+    @include breakpoint(phone) {
+        display: none;
+    }
 }
 .price {
 }

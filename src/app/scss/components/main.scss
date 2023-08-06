@@ -1,8 +1,14 @@
+@use '../util' as *;
+
 .main {
     font-family: var(--font-segoe);
     color: var(--black);
     height: 100%;
     background-color: var(--smoky);
+
+    @include breakpoint(phone) {
+        border-radius: 25px 25px 0 0;
+    }
 }
 .main__wrapper {
     display: flex;
@@ -11,6 +17,11 @@
     justify-content: space-between;
     padding: 10px 24px 16px 24px;
     position: relative;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+        padding: 0 16px 0 16px;
+    }
 }
 .main__bucket {
 
@@ -20,11 +31,22 @@
     height: 100%;
     margin-right: 32px;
 
+    @include breakpoint(phone) {
+        max-width: 288px;
+        margin-right: 0;
+    }
+
     h1 {
         font-size: 28px;
         font-weight: 700;
         line-height: 36px;
         margin-bottom: 27px;
+
+        @include breakpoint(phone) {
+            font-size: 20px;
+            line-height: 28px;
+            padding: 14px 0 0 0;
+        }
     }
 }
 .main__bill {
