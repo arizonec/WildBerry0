@@ -1,11 +1,4 @@
 .main__bill {
-    background-color: var(--white);
-    border-radius: 16px;
-    padding: 16px 24px 24px 24px;
-    z-index: 1;
-    max-width: 429px;
-    height: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 .bill__info {
     margin-bottom: 24px;
@@ -131,25 +124,26 @@
                 height: 20px;
                 top: 7px;
                 left: 0px;
-                margin-right: 11px;
+                margin-right: 10px;
                 border-radius: 50%;
-                background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+                // background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
     
             &::before {
                 content: '';
-                width: 16px;
-                height: 16px;
+                width: 20px;
+                height: 20px;
                 position: absolute;
                 top: 2px;
                 left: 2px;
                 border-radius: 50%;
                 background: var(--white);
+                border: 2px solid var(--gradient-start);
             }
     
             &::after {
                 content: '';
-                left: 2px;
-                top: 2px;
+                left: 3px;
+                top: 4px;
                 position: absolute;
                 height: 15px;
                 width: 15px;

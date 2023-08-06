@@ -28,4 +28,11 @@
     }
 }
 .main__bill {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 16px 24px 24px 24px;
+    z-index: 1;
+    max-width: 429px;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
