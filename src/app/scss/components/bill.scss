@@ -1,15 +1,12 @@
 .main__bill {
-    position: absolute;
-    top: -2px;
-    right: 24px;
     background-color: var(--white);
-    max-width: 429px;
     border-radius: 16px;
     padding: 16px 24px 24px 24px;
     z-index: 1;
+    max-width: 429px;
+    height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
-
 .bill__info {
     margin-bottom: 24px;
 }
