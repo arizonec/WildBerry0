@@ -1,2 +1,312 @@
 .main__bill {
+    position: absolute;
+    top: -2px;
+    right: 24px;
+    background-color: var(--white);
+    max-width: 429px;
+    border-radius: 16px;
+    padding: 16px 24px 24px 24px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.bill__info {
+    margin-bottom: 24px;
+}
+.info {
+}
+.info__total {
+    display: flex;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 4px;
+
+    h2 {
+        display: block;
+        flex: 1 1 auto;
+    }
+}
+.total {
+}
+.total__value {
+    margin-right: 3px;
+    letter-spacing: 1%;
+}
+.total__currency {
+    font-size: 20px;
+    line-height: 36px;
+}
+.info__pieces {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    h2 {
+        display: block;
+        flex: 1 1 auto;
+    }
+}
+.pieces {
+}
+.pieces__value {
+    margin-right: 3px;
+}
+.pieces__currency {
+}
+.info__sale {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+
+    h2 {
+        display: block;
+        flex: 1 1 auto;
+    }
+}
+.sale {
+}
+.sale__value {
+    margin-right: 3px;
+}
+.sale__currency {
+}
+.info__delivery {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+
+    h2 {
+        display: block;
+        flex: 1 1 auto;
+    }
+}
+.info__place {
+}
+.place {
+}
+.place__edit {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.place__edit2 {
+    display: flex;
+    justify-content: space-between;
+}
+.place__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+}
+.place__button {
+    width: 16px;
+    height: 16px;
+    background-image: url(/src/assets/images/edit.svg);background-color: transparent;
+}
+.place__address {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+.info__date {
+    color: var(--magenta);
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 13px;
+}
+.info__back {
+    
+        padding: 8px 8px 12px 8px;
+        display: flex;
+        background-color: var(--smoky);
+        border-radius: 8px;
+        margin-bottom: 28px;
+        
+        span {
+                position: relative;
+                width: 22px;
+                height: 20px;
+                top: 7px;
+                left: 0px;
+                margin-right: 11px;
+                border-radius: 50%;
+                background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+    
+            &::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                border-radius: 50%;
+                background: var(--white);
+            }
+    
+            &::after {
+                content: '';
+                left: 2px;
+                top: 2px;
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                background-image: url('/src/assets/images/Tick.svg');
+                background-repeat: no-repeat;
+                background-position: 65% 50%;
+                
+            }
+        }
+    
+        div {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            padding: 2px 0 0 0;
+    
+            a {
+               color: var(--green);
+               border-bottom: 1px dashed var(--light-green);
+            }
+        }
+    
+}
+.info__credit {
+}
+.credit {
+}
+.pay__system1 {
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.card__system {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--smoky);
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+    margin-right: 9px;
+}
+.pay__number {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    text-align: right;
+}
+.info__instant {
+    background-color: var(--smoky);
+    border-radius: 8px;
+    padding: 8px 8px 12px 8px;
+
+    p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+.instant {
+}
+.instant__input {
+    display: flex;
+    margin-bottom: 8px;
+
+    input {
+        display: none;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
+.input__checkbox {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background-color: var(--smoky);
+        border: 1px solid var(--light-gray);
+        left: 0;
+        top: 0;
+        border-radius: 6px;
+    }
+}
+.bill__button {
+    background-color: var(--magenta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 8px;
+    padding: 0 32px 5px 32px;
+    margin-bottom: 10px;
+
+    button {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 24px;
+        background-color: transparent;
+        color: var(--white);
+    }
+    
+}
+.button {
+}
+.bill__rules {
+    display: flex;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+
+    p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    a {
+        color: var(--black);
+        position: relative;
+        border-bottom: 1px solid var(--rulers);
+    }
+}
+.rules {
+}
+.rules__checkbox {
+    width: 13px;
+    height: 24px;
+    position: relative;
+    margin-right: 10px;
+
+    input {
+        display: none;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 12.51px;
+        height: 10.16px;
+        top: 3.32px;
+        left: 0.26px;
+        background-image: url(/src/assets/images/black_tick.svg);
+        background-repeat: no-repeat;
+    }
 }
