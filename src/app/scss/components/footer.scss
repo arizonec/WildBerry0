@@ -1,3 +1,5 @@
+@use '../util/' as *;
+
 .footer{
     height: 88px;
     width: 100%;
@@ -20,4 +22,9 @@
     text-align: center;
     color: var(--light-white);
     letter-spacing: 1%;
+
+    @include breakpoint(phone) {
+       padding: 40px 0 90px 0;
+    }
 }
+

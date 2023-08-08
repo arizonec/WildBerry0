@@ -1,8 +1,17 @@
+@use '../util/' as *;
+
 .bucket__receiver {
     background-color: var(--white);
     padding: 17px 24px 24px 24px;
     border-radius: 16px;
     color: var(--light-gray);
+
+    @include breakpoint(phone) {
+        max-width: 320px;
+        margin-left: -16px;
+        padding: 10px 16px 24px 16px;
+        margin-bottom: 16px;
+    }
 
     h2 {
         max-width: 755px;
@@ -14,6 +23,13 @@
         margin-right: 10px;
         margin-bottom: 16px;
         color: var(--black);
+
+        @include breakpoint(phone) {
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.20px;
+            margin-bottom: 5px;
+        }
     }
 }
 .receiver__name {
@@ -21,15 +37,28 @@
     display: flex;
     align-items: center;
     margin-bottom: 1px;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+    }
 }
 .receiver__more {
     max-width: 700px;
     display: flex;
     align-items: center;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+    }
 }
 .name__name {
     flex: 1 1 50%;
     margin-right: 24px;
+
+    @include breakpoint(phone) {
+        width: 288px;
+        margin: 0 0 10px 0;
+    }
 }
 .name__name-title {
     font-weight: 400;
@@ -55,6 +84,11 @@
 .name__second {
     flex: 1 1 50%;
     width: 100%;
+
+    @include breakpoint(phone) {
+        width: 288px;
+        margin-bottom: 9px;
+    }
 }
 .name__second-title {
     font-weight: 400;
@@ -84,6 +118,11 @@
 .more__email {
     flex: 1 1 33.3%;
     margin-right: 24px;
+
+    @include breakpoint(phone) {
+        width: 288px;
+        margin: 0 0 8px 0;
+    }
 }
 .more__email-title {
     font-weight: 400;
@@ -109,6 +148,11 @@
 .more__tel {
     flex: 1 1 33.3%;
     margin-right: 24px;
+
+    @include breakpoint(phone) {
+        width: 288px;
+        margin: 0 0 6px 0;
+    }
 }
 .more__tel-title {
     font-weight: 400;
@@ -136,6 +180,10 @@
 }
 .more__number {
     flex: 1 1 33.3%;
+
+    @include breakpoint(phone) {
+        width: 288px;
+    }
 }
 .more__number-title {
     font-weight: 400;
@@ -151,6 +199,10 @@
     border-bottom: 2px solid var(--light-gray);
     width: 100%;
     margin-bottom: 7px;
+
+    @include breakpoint(phone) {
+        margin-bottom: 3px;
+    }
 }
 .more__number-help {
     font-weight: 400;

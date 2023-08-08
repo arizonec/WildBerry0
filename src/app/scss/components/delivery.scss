@@ -1,13 +1,26 @@
+@use '../util/' as *;
+
 .bucket__delivery {
     margin-bottom: 16px;
     background-color: var(--white);
     padding: 16px 0 24px 0;
     border-radius: 16px;
+
+    @include breakpoint(phone) {
+        max-width: 320px;
+        margin-left: -16px;
+        padding: 16px 0 24px 0;
+    }
 }
 .delivery__edit {
     display: flex;
     padding: 0 24px 0 24px;
     margin-bottom: 16px;
+
+    @include breakpoint(phone) {
+        padding: 0 16px 0 16px;
+        margin-bottom: 10px;
+    }
 
     h2 {
         max-width: 755px;
@@ -17,6 +30,12 @@
         line-height: 32px;
         letter-spacing: -1%;
         margin-right: 10px;
+
+        @include breakpoint(phone) {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: -0.20px;
+        }
     }
 
     button {
@@ -29,12 +48,21 @@
         text-align: right;
         background: transparent;
         cursor: pointer;
+
+        @include breakpoint(phone) {
+            padding: 3px 0 0 0;
+        }
     }
 }
 .delivery__address {
     display: flex;
     padding: 0 24px 0 24px;
     margin-bottom: 16px;
+
+    @include breakpoint(phone) {
+       flex-direction: column;
+       padding: 0 16px 0 16px;
+    }
 }
 .address {
 }
@@ -53,6 +81,11 @@
     line-height: 24px;
     margin-bottom: 2px;
     padding: 2px 0 0 5px;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+        padding: 0;
+    }
 }
 .address__info-more{
     display: flex;
@@ -65,6 +98,10 @@
     margin-right: 8px;
     padding: 1px 0 0 22px;
 
+    @include breakpoint(phone) {
+        padding: 0 0 0 16px;
+     }
+
     &::before {
         content: '';
         position: absolute;
@@ -75,6 +112,12 @@
         background: url('/src/assets/images/Stars.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
+
+        @include breakpoint(phone) {
+            left: 0;
+            top: 0;
+            background-position: 0 0;
+         }
 
     }
 }
@@ -88,6 +131,11 @@
     display: flex;
     padding: 0 24px 0 24px;
     margin-bottom: 16px;
+
+    @include breakpoint(phone) {
+    flex-direction: column;
+    padding: 0 16px 0 16px;
+    }
 }
 .cost {
 }
@@ -103,6 +151,10 @@
     font-size: 16px;
     line-height: 24px;
     padding: 0 0 0 5px;
+
+    @include breakpoint(phone) {
+        padding: 0;
+    }
 }
 .delivery__list {
     margin-bottom: 24px;
@@ -113,6 +165,12 @@
     display: flex;
     padding: 0 24px 0 24px;
     margin-bottom: 16px;
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+        padding: 0 16px 0 16px;
+        margin-bottom: 24px;
+    }
 }
 .list__date {
     width: 177px;
@@ -120,10 +178,18 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+
+    @include breakpoint(phone) {
+        margin-bottom: 12px;
+    }
 }
 .list__items {
     padding: 0 0 0 5px;
     display: flex;
+
+    @include breakpoint(phone) {
+        padding: 0;
+    }
 
     img {
         width: 40px;
@@ -201,6 +267,7 @@
 .delivery__back {
     padding: 0 24px 0 24px;
     display: flex;
+    align-items: center;
 
     span {
             position: relative;
@@ -211,6 +278,10 @@
             margin-right: 10px;
             border-radius: 50%;
             background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+
+            @include breakpoint(phone) {
+                width: 30px;
+            }
 
         &::before {
             content: '';
@@ -242,6 +313,10 @@
         font-size: 13px;
         line-height: 16px;
         padding: 2px 0 0 0;
+
+        @include breakpoint(phone) {
+            line-height: 14px;
+        }
 
         a {
            color: var(--green);

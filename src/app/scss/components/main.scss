@@ -39,12 +39,12 @@
     h1 {
         font-size: 28px;
         font-weight: 700;
-        line-height: 36px;
-        margin-bottom: 27px;
+        line-height: 40px;
+        margin-bottom: 23px;
 
         @include breakpoint(phone) {
             font-size: 20px;
-            line-height: 28px;
+            line-height: 32px;
             padding: 14px 0 0 0;
         }
     }
@@ -55,6 +55,13 @@
     padding: 16px 24px 24px 24px;
     z-index: 1;
     max-width: 429px;
-    height: 100%;
+    max-height: 572px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-top: -12px;
+
+    @include breakpoint(phone) {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 16px 0 24px 0;
+    }
 }
