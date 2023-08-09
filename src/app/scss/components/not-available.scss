@@ -3,6 +3,12 @@
 .bucket__not-available {
     margin-bottom: 40px;
 
+    // @include breakpoint(tabphone) {
+    //     width: 100vw;
+    //     padding: 10px 16px 24px 16px;
+    //     margin-left: -16px;
+    // }
+
     @include breakpoint(phone) {
         margin-bottom: 27px;
     }
@@ -11,6 +17,10 @@
 }
 .not-available__hide-item {
     border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+
+    @include breakpoint(tabphone) {
+        border-top: none;
+    }
 
     @include breakpoint(phone) {
         border-top: none;
@@ -25,6 +35,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @include breakpoint(tabphone) {
+        flex-direction: column;
+        max-width: 100%;
+        border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 8px;
+    }
 
     @include breakpoint(phone) {
         flex-direction: column;
@@ -68,7 +85,18 @@
     font-weight: 400;
     margin-bottom: 8px;
 
+    @include breakpoint(tabphone) {
+        font-size: 14px;
+        line-height: 21px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        max-width: 240px;
+    }
+
     @include breakpoint(phone) {
+        max-width: none;
         font-size: 14px;
         line-height: 21px;
         display: -webkit-box;
@@ -95,6 +123,14 @@
 }
 .not-item__counter {
     width: 226px;
+
+    @include breakpoint(tabphone) {
+        width: 400px;
+    }
+
+    @include breakpoint(phone) {
+        width: 226px;
+    }
 }
 .not-item__count {
     margin-right: 16px;
@@ -109,6 +145,11 @@
     width: 100px;
     justify-content: flex-end;
     padding: 10px 2px 0 0;
+
+    @include breakpoint(tabphone) {
+        width: 328px;
+        align-items: flex-end;
+    }
 
     @include breakpoint(phone) {
         width: 288px;

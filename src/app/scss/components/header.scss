@@ -11,7 +11,12 @@
     height: 112px;
     padding: 20px 3px 44px 24px;
 
+    @include breakpoint(tablet) {
+        justify-content: space-between;
+    }
+
     @include breakpoint(phone) {
+        justify-content: flex-start;
         padding: 0 13px 0 13px;
         height: 56px;
     }
@@ -47,6 +52,10 @@
         margin-right: 16px;
         position: relative;
         cursor: pointer;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
 
         @include breakpoint(phone) {
             display: none;
@@ -97,6 +106,10 @@
         margin-right: 16px;
         position: relative;
         cursor: pointer;
+
+        @include breakpoint(tablet) {
+            display: block;
+        }
 
         @include breakpoint(phone) {
             display: block;
@@ -149,6 +162,10 @@
         max-width: 106px;
         height: 56px;
         cursor: pointer;
+
+        @include breakpoint(tablet) {
+            white-space: nowrap;
+        }
         
 
         @include breakpoint(phone) {
@@ -173,6 +190,10 @@
     height: 48px;
     background: var(--search-bar);
     cursor: pointer;
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
 
     @include breakpoint(phone) {
         display: none;
@@ -214,6 +235,10 @@
     font-size: 13px;
     line-height: 16px;
     font-weight: 400;
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
 
     @include breakpoint(phone) {
         display: none;
@@ -273,6 +298,17 @@
 
 .search__mobile {
     display: none;
+
+    @include breakpoint(tablet) {
+        display: block;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: -50px;
+            top: -2px;
+        }
+    }
 
     @include breakpoint(phone) {
         display: block;
