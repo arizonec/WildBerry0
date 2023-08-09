@@ -6,11 +6,11 @@
     border-radius: 16px;
     margin-bottom: 16px;
 
-    // @include breakpoint(tabphone) {
-    //     width: 100vw;
-    //     padding: 10px 16px 24px 16px;
-    //     margin-left: -16px;
-    // }
+    @include breakpoint(tabphone) {
+        width: 100vw;
+        padding: 10px 16px 24px 16px;
+        margin-left: -16px;
+    }
     
     @include breakpoint(phone) {
         max-width: 320px;

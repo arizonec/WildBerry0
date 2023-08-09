@@ -3,14 +3,17 @@
 .bucket__not-available {
     margin-bottom: 40px;
 
-    // @include breakpoint(tabphone) {
-    //     width: 100vw;
-    //     padding: 10px 16px 24px 16px;
-    //     margin-left: -16px;
-    // }
+    @include breakpoint(tabphone) {
+        width: 100vw;
+        padding: 10px 16px 24px 16px;
+        margin-left: -16px;
+    }
 
     @include breakpoint(phone) {
+        width: 100%;
         margin-bottom: 27px;
+        padding: 0;
+        margin-left: 0;
     }
 }
 .not-available__hide {

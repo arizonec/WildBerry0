@@ -3,15 +3,18 @@
 .bucket__available {
     margin-bottom: 40px;
 
-    // @include breakpoint(tabphone) {
-    //     width: 100vw;
-    //     padding: 10px 16px 24px 16px;
-    //     margin-left: -16px;
-    // }
+    @include breakpoint(tabphone) {
+        width: 100vw;
+        padding: 10px 16px 24px 16px;
+        margin-left: -16px;
+    }
 
     @include breakpoint(phone) {
+        width: 100%;
         margin-top: -10px;
         margin-bottom: 35px;
+        padding: 0;
+        margin-left: 0;
     }
 }
 .available {
@@ -102,6 +105,8 @@
 }
 .available__choose-item {
     border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+
+    
 
     @include breakpoint(tabphone) {
         border-top: none;
