@@ -6,4 +6,18 @@ export default {
     number: document.querySelectorAll('.count__number-num'),
     previous: document.querySelectorAll('.previous__value'),
     current: document.querySelectorAll('.current__value'),
+    totalPrice: document.querySelector('.total__value'),
+    instantPayCheckbox: document.querySelector('.input__checkbox'), 
+    btn: document.querySelector('.bill__button-btn'),
+    salePercent: document.querySelectorAll('.sale-perc'),
+    saleClientPercent: document.querySelectorAll('.sale__client-perc'),
+    saleDif: document.querySelectorAll('.sale-dif'),
+    saleClientDif: document.querySelectorAll('.sale__client-dif'),
+    hider: document.querySelector('.choose-all__hide'),
+    modalClose: document.querySelector('.modal__button'),
+    modalButton: document.querySelector('.delivery__modal-btn'),
+    deliveryModal: document.querySelector('.delivery__modal'),
+    modalBackground: document.querySelector('.modal__back'),
+    editButton: document.querySelector('.edit__button'),
+    main: document.querySelector('body')
 };
