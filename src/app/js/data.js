@@ -1,0 +1,32 @@
+export default [
+    {
+        id: 1,
+        color: 'белый',
+        size: '56',
+        price: 522,
+        total_price: 522,
+        sale_price: 1051,
+        value: '1',
+        left: 2,
+    },
+    {
+        id: 2,
+        color: 'прозрачный',
+        size: '',
+        price: 10500.235,
+        total_price: 2100047,
+        sale_price: '2 300 047',
+        value: '200',
+        left: 400,
+    },
+    {
+        id: 3,
+        color: '',
+        size: '',
+        price: 247,
+        total_price: 494,
+        sale_price: '950',
+        value: '2',
+        left: 2,
+    },
+]

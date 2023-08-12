@@ -27,6 +27,7 @@
     position: relative;
     height: 24px;
     margin-bottom: 16px;
+    user-select: none;
 
     @include breakpoint(tabphone) {
         max-width: 670px;
@@ -56,16 +57,43 @@
             height: 22px;
             left: 0;
             top: 2px;
+            cursor: pointer;
             border-radius: 6px;
-            background-color: var(--magenta);
-            background-image: url('/src/assets/images/Input.svg');
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
+            background-color: transparent;
+            background-image: none;
+            // background-repeat: no-repeat;
+            // background-position: 50% 50%;
+            border: 1px solid var(--rulers);
 
             @include breakpoint(phone) {
                 background-color: var(--white);
                 background-image: none;
                 border: 1px solid var(--rulers);
+            }
+        }
+
+        &.active-all{
+            &::before {
+                content: '';
+                position: absolute;
+                width: 22px;
+                height: 22px;
+                left: 0;
+                top: 2px;
+                border-radius: 6px;
+                border: 1px solid var(--rulers);
+                background-color: var(--magenta);
+                background-image: url('/src/assets/images/Input.svg');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+    
+                @include breakpoint(phone) {
+                    border: 1px solid var(--rulers);
+                    background-color: var(--magenta);
+                    background-image: url('/src/assets/images/Input.svg');
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                }
             }
         }
     }
@@ -146,18 +174,19 @@
 .item__photo {
     position: relative;
     margin-right: 16px;
+    user-select: none;
 
-    &.choosen {
-        &::before {
-            background-color: var(--magenta);
-        }
+    // &.choosen {
+    //     &::before {
+    //         background-color: var(--magenta);
+    //     }
 
-        @include breakpoint(phone) {
-            &::before {
-                background-color: var(--magenta);
-            }
-        }
-    }
+    //     @include breakpoint(phone) {
+    //         &::before {
+    //             background-color: var(--magenta);
+    //         }
+    //     }
+    // }
 
     & img {
         border-radius: 8px;
@@ -181,11 +210,13 @@
         height: 22px;
         left: 0;
         top: 37.5px;
+        cursor: pointer;
         border-radius: 6px;
-        background-color: var(--magenta);
-        background-image: url('/src/assets/images/Input.svg');
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+        background-color: transparent;
+        background-image: none;
+        // background-repeat: no-repeat;
+        // background-position: 50% 50%;
+        border: 1px solid var(--rulers);
 
         @include breakpoint(phone) {
            background-color: var(--white);
@@ -194,6 +225,34 @@
            background-position: 50% 45%;
         }
 
+    }
+
+    &.selected {
+        &::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            left: 0;
+            top: 37.5px;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: var(--magenta);
+            background-image: url('/src/assets/images/Input.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+    
+            @include breakpoint(phone) {
+               background-color: var(--white);
+               top: 5px;
+               left: 4px;
+               background-color: var(--magenta);
+                background-image: url('/src/assets/images/Input.svg');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+    
+        }
     }
     &.active-size {
         &::after {
@@ -360,6 +419,7 @@
         width: 9px;
         height: 1px;
         background: var(--rulers);
+        cursor: pointer;
     }
 
     &-num{
@@ -381,6 +441,7 @@
         font-weight: 400;
         transform: translateX(-50%);
         color: var(--rulers);
+        cursor: pointer;
     }
 
     .active-color {
@@ -430,6 +491,14 @@
     margin-right: 18px;
     width: 20px;
     height: 20px;
+    -webkit-mask: url(/src/assets/images/Like.svg) no-repeat center;
+    mask: url(/src/assets/images/Like.svg) no-repeat center;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: var(--orange);
+    }
+
 
     @include breakpoint(phone) {
         margin-right: 20px;
