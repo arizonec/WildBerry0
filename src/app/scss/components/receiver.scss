@@ -85,6 +85,10 @@
     line-height: 16px;
     margin-bottom: 2px;
     visibility: hidden;
+
+    &.active-hat{
+        visibility: visible;
+    }
 }
 .name__name-input {
     width: 100%;
@@ -93,16 +97,26 @@
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 4px;
+
+    &.error {
+        color: red;
+    }
 }
 .name__name-help {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     visibility: hidden;
+
+    &.error {
+        color: red;
+        visibility: visible;
+    }
 }
 .name__second {
     flex: 1 1 50%;
     width: 100%;
+
 
     @include breakpoint(tabphone) {
         width: 100%;
@@ -119,6 +133,10 @@
     line-height: 16px;
     margin-bottom: 2px;
     visibility: hidden;
+
+    &.active-hat{
+        visibility: visible;
+    }
 }
 .name__second-input {
     width: 100%;
@@ -127,12 +145,21 @@
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 4px;
+    
+    &.error {
+        color: red;
+    }
 }
 .name__second-help {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     visibility: hidden;
+
+    &.error {
+        color: red;
+        visibility: visible;
+    }
 }
 .receiver__more {
 }
@@ -141,6 +168,7 @@
 .more__email {
     flex: 1 1 33.3%;
     margin-right: 24px;
+
 
     @include breakpoint(tabphone) {
         width: 100%;
@@ -158,6 +186,10 @@
     line-height: 16px;
     margin-bottom: 2px;
     visibility: hidden;
+
+    &.active-hat{
+        visibility: visible;
+    }
 }
 .more-email {
     font-weight: 400;
@@ -166,16 +198,29 @@
     border-bottom: 2px solid var(--light-gray);
     width: 100%;
     margin-bottom: 7px;
+    
+    &.error {
+        color: red;
+    }
 }
 .more__email-help {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     visibility: hidden;
+
+    &.error {
+        color: red;
+        visibility: visible;
+    }
 }
 .more__tel {
     flex: 1 1 33.3%;
     margin-right: 24px;
+
+    &.error {
+        color: red;
+    }
 
     @include breakpoint(tabphone) {
         width: 100%;
@@ -192,6 +237,11 @@
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 2px;
+    visibility: hidden;
+
+    &.active-hat{
+        visibility: visible;
+    }
 }
 .more-tel {
     font-weight: 400;
@@ -200,6 +250,10 @@
     border-bottom: 2px solid var(--light-gray);
     width: 100%;
     margin-bottom: 7px;
+
+    &.error {
+        color: red;
+    }
 
     &::placeholder {
         color: var(--black);
@@ -210,9 +264,18 @@
     font-size: 12px;
     line-height: 14px;
     visibility: hidden;
+
+    &.error {
+        color: red;
+        visibility: visible;
+    }
 }
 .more__number {
     flex: 1 1 33.3%;
+
+    &.error {
+        color: red;
+    }
 
     @include breakpoint(tabphone) {
         width: 100%;
@@ -228,6 +291,10 @@
     line-height: 16px;
     margin-bottom: 2px;
     visibility: hidden;
+
+    &.active-hat{
+        visibility: visible;
+    }
 }
 .more-number {
     font-weight: 400;
@@ -240,9 +307,19 @@
     @include breakpoint(phone) {
         margin-bottom: 3px;
     }
+
+    &.error {
+        color: red;
+    }
 }
 .more__number-help {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+    visibility: hidden;
+
+    &.error {
+        color: red;
+        visibility: visible;
+    }
 }

@@ -2,6 +2,7 @@ import '../index.html';
 import '../scss/style.scss';
 import variables from './variables';
 import data from './data';
+import { userInfo } from './userInfo';
 
 const state = {
     current:{},
@@ -9,7 +10,7 @@ const state = {
 
 state.current = {...data};
 
-const { main, chooseAll, available, editButton, counter, selectItem, minus, number, plus, current, previous, totalPrice, btn, instantPayCheckbox, salePercent, saleClientPercent, saleDif, saleClientDif, hider, hiderNot, modalButton, modalClose, modalBackground, deliveryModal } = variables;
+const { main, submitButton, editPayButton, form, placeDel, placePay, chooseAll, payModal, toAdress, courier, available, editButton, counter, selectItem, minus, number, plus, current, previous, totalPrice, btn, instantPayCheckbox, salePercent, saleClientPercent, saleDif, saleClientDif, hider, hiderNot, modalButton, modalClose, modalBackground, deliveryModal } = variables;
 
 const chooseAllItems = () => {
     chooseAll.classList.toggle('active-all');
@@ -126,22 +127,125 @@ const payCheck = ({ target }) => {
     }
 }
 
-const modalBackClose = () => {
-    deliveryModal.classList.remove('modal__active');
-    modalBackground.classList.remove('back__active');
-    main.classList.remove('overflow')
+const modalBackClose = ({ target }) => {
+    if(target.classList.contains('delivery__modal-btn')) {
+        payModal.classList.remove('modal__active');
+        deliveryModal.classList.remove('modal__active');
+        modalBackground.classList.remove('back__active');
+        main.classList.remove('overflow')}
 }
 
-const modalCloseClose = () => {
-    deliveryModal.classList.remove('modal__active');
-    modalBackground.classList.remove('back__active');
-    main.classList.remove('overflow')
+const modalCloseClose = ({ target }) => {
+    if(target.classList.contains('modal__button')) {
+        payModal.classList.remove('modal__active');
+        deliveryModal.classList.remove('modal__active');
+        modalBackground.classList.remove('back__active');
+        main.classList.remove('overflow')
+    }
 }
 
 const openAddress = () => {
+    payModal.classList.add('modal__active');
+    modalBackground.classList.add('back__active');
+    main.classList.add('overflow')
+}
+
+const openPay = () => {
     deliveryModal.classList.add('modal__active');
     modalBackground.classList.add('back__active');
     main.classList.add('overflow')
+}
+
+const borderActive = ({ target }) => {
+    target.classList.toggle('border-active')
+}
+
+const validate = (form) => {
+    let result = true;
+    const phone = /^(\+?7|8)?9\d{9}$/
+    const text = /^[A-ZА-ЯЁ]+$/i;
+    const mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    form.querySelectorAll('input').forEach(input => {
+        if(input.value === '') {
+            input.previousElementSibling.classList.remove('active-hat');
+            input.nextElementSibling.classList.add('error');
+            result = false;
+        } 
+        if((input.value !== '')) {
+            input.previousElementSibling.classList.add('active-hat');
+            input.nextElementSibling.classList.remove('error');
+            result = true;
+        }
+
+
+
+        if((input.classList.contains('name__name-input'))) {
+            if(text.test(input.value) === false) {
+                input.classList.add('error');
+                input.nextElementSibling.classList.add('error');
+            }
+            if(text.test(input.value) === true) {
+                input.classList.remove('error');
+                input.nextElementSibling.classList.remove('error');
+            }
+        }
+        if((input.classList.contains('name__second-input'))) {
+            if(text.test(input.value) === false) {
+                input.classList.add('error');
+                input.nextElementSibling.classList.add('error');
+            }
+            if(text.test(input.value) === true) {
+                input.classList.remove('error');
+                input.nextElementSibling.classList.remove('error');
+            }
+        }
+        if((input.classList.contains('more-email'))) {
+            if(mail.test(input.value) === false) {
+                input.classList.add('error');
+                input.nextElementSibling.classList.add('error');
+            }
+            if(mail.test(input.value) === true) {
+                input.classList.remove('error');
+                input.nextElementSibling.classList.remove('error');
+            }
+        }
+        if((input.classList.contains('more-tel'))) {
+            if(phone.test(input.value) === false) {
+                input.classList.add('error');
+                input.nextElementSibling.classList.add('error');
+            }
+            if(phone.test(input.value) === true) {
+                input.classList.remove('error');
+                input.nextElementSibling.classList.remove('error');
+            }
+        }
+        if((input.classList.contains('more-number'))) {
+            if(input.value.length !== 14) {
+                input.classList.add('error');
+                input.nextElementSibling.classList.add('error');
+            }
+            if(input.value.length === 14) {
+                input.classList.remove('error');
+                input.nextElementSibling.classList.remove('error');
+            }
+        }
+    })
+
+    return result;
+}
+
+const formValidation = (event) => {  
+    event.preventDefault();
+
+    if(validate(form) === true) {
+        // alert('ok!')
+        // userInfo.push(form);
+    }
+}
+
+const formSubmit = () => {
+    form.addEventListener('submit', formValidation);
 }
 
 chooseAll.addEventListener('click', chooseAllItems);
@@ -153,5 +257,11 @@ instantPayCheckbox.addEventListener('click', instantPay);
 hider.addEventListener('click', hideAll);
 document.addEventListener('click', payCheck);
 editButton.addEventListener('click', openAddress);
-modalButton.addEventListener('click', modalBackClose);
-modalClose.addEventListener('click', modalCloseClose);
+editPayButton.addEventListener('click', openPay);
+document.addEventListener('click', modalBackClose);
+document.addEventListener('click', modalCloseClose);
+toAdress.addEventListener('click', borderActive);
+courier.addEventListener('click', borderActive);
+placeDel.addEventListener('click', openAddress);
+placePay.addEventListener('click', openPay);
+submitButton.addEventListener('click', formSubmit)

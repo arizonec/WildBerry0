@@ -446,8 +446,8 @@
                                         <div class="delivery__modal-card-number">1234 56•• •••• 1234</div>
                                     </div>
                                 </div>
-                                <div class="delivery__modal-btn">
-                                    <button>Выбрать</button>
+                                <div class="delivery__modal-btn1">
+                                    <button class="delivery__modal-btn">Выбрать</button>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +455,7 @@
                     <div class="bucket__pay pay">
                         <div class="pay__edit">
                             <h2>Способ оплаты</h2>
-                            <button type="button">Изменить</button>
+                            <button class="pay__edit-button" type="button">Изменить</button>
                         </div>
                         <div class="pay__card">
                             <div class="card__system"><img src="/src/assets/images/mir.svg" alt=""></div>
@@ -463,39 +463,72 @@
                             <div class="card__date">01/30</div>
                         </div>
                         <div class="pay__info">Спишем оплату c краты при получении</div>
-                    </div>
-                    <div class="bucket__receiver receiver">
-                        <h2>Получатель</h2>
-                        <div class="receiver__name name">
-                            <div class="name__name">
-                                <h4 class="name__name-title">Имя</h4>
-                                <input class="name__name-input" type="text" placeholder="Имя">
-                                <h4 class="name__name-help">Используйте латинские буквы</h4>
+                        <div class="modal__back"></div>
+                        <div class="pay__modal">
+                            <div class="delivery__modal-title">
+                                <div class="modal__title">Способ доставки</div>
+                                <div class="modal__button"></div>
                             </div>
-                            <div class="name__second">
-                                <h4 class="name__second-title">Фамилия</h4>
-                                <input class="name__second-input" type="text" placeholder="Фамилия">
-                                <h4 class="name__second-help">Укажите фамилию</h4>
+                            <div class="pay__modal-buttons">
+                                <button class="to-adress">В пункт выдачи</button>
+                                <button class="by-courier">Курьером</button>
+                            </div>
+                            <div class="pay__modal-list">
+                                <div class="pay__modal-title-item">
+                                    <div class="delivery__modal-card-input"><input type="text"></div>
+                                    <div class="pay__modal-title-item-address">Бишкек, улица Табышалиева, 57</div>
+                                    <div class="pay__modal-title-item-bucket"><img src="/src/assets/images/Remove.svg" alt=""></div>
+                                </div>
+                                <div class="pay__modal-title-item">
+                                    <div class="delivery__modal-card-input"><input type="text"></div>
+                                    <div class="pay__modal-title-item-address">Бишкек, улица Жукеева-Пудовкина, 77/1</div>
+                                    <div class="pay__modal-title-item-bucket"><img src="/src/assets/images/Remove.svg" alt=""></div>
+                                </div>
+                                <div class="pay__modal-title-item">
+                                    <div class="delivery__modal-card-input"><input type="text"></div>
+                                    <div class="pay__modal-title-item-address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</div>
+                                    <div class="pay__modal-title-item-bucket"><img src="/src/assets/images/Remove.svg" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="delivery__modal-btn1">
+                                <button class="delivery__modal-btn">Выбрать</button>
                             </div>
                         </div>
-                        <div class="receiver__more more">
-                            <div class="more__email">
-                                <h4 class="more__email-title">Почта</h4>
-                                <input class="more-email" type="email" placeholder="Почта">
-                                <h4 class="more__email-help">Используйте латинские буквы</h4>
+                    </div>
+                    <form action="" id="form">
+                        <div class="bucket__receiver receiver">
+                            <h2>Получатель</h2>
+                            <div class="receiver__name name">
+                                <div class="name__name">
+                                    <h4 class="name__name-title">Имя</h4>
+                                    <input class="name__name-input" type="text" placeholder="Имя">
+                                    <h4 class="name__name-help">Используйте латинские буквы</h4>
+                                </div>
+                                <div class="name__second">
+                                    <h4 class="name__second-title">Фамилия</h4>
+                                    <input class="name__second-input" type="text" placeholder="Фамилия">
+                                    <h4 class="name__second-help">Используйте латинские буквы</h4>
+                                </div>
                             </div>
-                            <div class="more__tel">
-                                <h4 class="more__tel-title">Телефон</h4>
-                                <input class="more-tel" type="tel" placeholder="+7 (988) 123-45-67">
-                                <h4 class="more__tel-help">Введите телефон верно</h4>
-                            </div>
-                            <div class="more__number">
-                                <h4 class="more__number-title">ИНН</h4>
-                                <input class="more-number" type="number" placeholder="ИНН">
-                                <h4 class="more__number-help">Для таможенного оформления</h4>
+                            <div class="receiver__more more">
+                                <div class="more__email">
+                                    <h4 class="more__email-title">Почта</h4>
+                                    <input class="more-email" type="text" placeholder="Почта">
+                                    <h4 class="more__email-help">Проверьте адрес электронной почты</h4>
+                                </div>
+                                <div class="more__tel">
+                                    <h4 class="more__tel-title">Телефон</h4>
+                                    <input class="more-tel" type="tel" placeholder="+7 (988) 123-45-67">
+                                    <h4 class="more__tel-help">Формат +9 999 999 99 99</h4>
+                                </div>
+                                <div class="more__number">
+                                    <h4 class="more__number-title">ИНН для таможни</h4>
+                                    <input class="more-number" type="number" placeholder="ИНН">
+                                    <h4 class="more__number-help">Проверьте ИНН</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="main__bill bill">
                     <div class="bill__wrapper">
@@ -523,7 +556,7 @@
                             <div class="info__place place">
                                 <div class="place__edit">
                                     <div class="place__title">Доставка в пункт выдачи</div>
-                                    <button class="place__button"></button>
+                                    <button class="place__button place__button-delivery"></button>
                                 </div>
                                 <div class="place__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                             </div>
@@ -537,7 +570,7 @@
                             <div class="info__credit credit">
                                 <div class="place__edit2">
                                     <div class="place__title">Оплата картой</div>
-                                    <button class="place__button"></button>
+                                    <button class="place__button place__button-pay"></button>
                                 </div>
                                 <div class="pay__system1">
                                     <div class="card__system"><img src="/src/assets/images/mir.svg" alt=""></div>
@@ -553,7 +586,7 @@
                             </div>
                         </div>
                         <div class="bill__button button">
-                            <button class="bill__button-btn">Заказать</button>
+                            <button form="form" type="submit" class="bill__button-btn">Заказать</button>
                         </div>
                         <div class="bill__rules rules">
                             <div class="rules__checkbox"><input type="checkbox"></div>

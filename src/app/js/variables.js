@@ -14,10 +14,18 @@ export default {
     saleDif: document.querySelectorAll('.sale-dif'),
     saleClientDif: document.querySelectorAll('.sale__client-dif'),
     hider: document.querySelector('.choose-all__hide'),
-    modalClose: document.querySelector('.modal__button'),
-    modalButton: document.querySelector('.delivery__modal-btn'),
+    // modalClose: document.querySelectorAll('.modal__button'),
+    // modalButton: document.querySelectorAll('.delivery__modal-btn'),
     deliveryModal: document.querySelector('.delivery__modal'),
     modalBackground: document.querySelector('.modal__back'),
     editButton: document.querySelector('.edit__button'),
-    main: document.querySelector('body')
+    editPayButton: document.querySelector('.pay__edit-button'),
+    main: document.querySelector('body'),
+    toAdress: document.querySelector('.to-adress'),
+    courier: document.querySelector('.by-courier'),
+    payModal: document.querySelector('.pay__modal'),
+    placeDel: document.querySelector('.place__button-delivery'),
+    placePay: document.querySelector('.place__button-pay'),
+    submitButton: document.querySelector('.bill__button'),
+    form: document.getElementById('form')
 };
