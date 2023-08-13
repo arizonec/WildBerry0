@@ -160,7 +160,8 @@ const borderActive = ({ target }) => {
     target.classList.toggle('border-active')
 }
 
-const phone = /^(\+?7|8) + ?9\d{9}$/
+// const phone = /^(\+?7|8) + ?9\d{9}$/
+const phone = /^(\+?7|8)?([- _():=+]?\d[- _():=+]?){10}(\s*)?$/;
 const text = /^[A-ZА-ЯЁ]+$/i;
 const mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
