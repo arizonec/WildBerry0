@@ -27,5 +27,6 @@ export default {
     placeDel: document.querySelector('.place__button-delivery'),
     placePay: document.querySelector('.place__button-pay'),
     submitButton: document.querySelector('.bill__button'),
-    form: document.getElementById('form')
+    form: document.getElementById('form'),
+    // receiver: document.querySelector('.bucket__receiver')
 };
