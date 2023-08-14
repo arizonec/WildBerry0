@@ -10,73 +10,192 @@
     margin-bottom: 24px;
 }
 .info {
-}
-.info__total {
-    display: flex;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 4px;
-
-    @include breakpoint(phone) {
-        font-size: 20px;
-        line-height: 34px;
-        letter-spacing: -0.20px;
-        margin-bottom: 2px;
+    &__total {
+        display: flex;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 4px;
+    
+        @include breakpoint(phone) {
+            font-size: 20px;
+            line-height: 34px;
+            letter-spacing: -0.20px;
+            margin-bottom: 2px;
+        }
+    
+        h2 {
+            display: block;
+            flex: 1 1 auto;
+        }
     }
 
-    h2 {
-        display: block;
-        flex: 1 1 auto;
+    &__pieces {
+        display: flex;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    
+        @include breakpoint(phone) {
+            margin-bottom: -2px;
+        }
+    
+        h2 {
+            display: block;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__sale {
+        display: flex;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+    
+        h2 {
+            display: block;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__date {
+        color: var(--magenta);
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 13px;
+    
+        @include breakpoint(phone) {
+            display: none;
+        }
+    }
+    &__back {
+            padding: 8px 8px 12px 8px;
+            display: flex;
+            background-color: var(--smoky);
+            border-radius: 8px;
+            margin-bottom: 28px;
+            position: relative;
+    
+            @include breakpoint(phone) {
+                background-color: var(--smoky-dark);
+                margin-bottom: -5px;
+            }
+            
+            span {
+                    position: relative;
+                    width: 22px;
+                    height: 20px;
+                    top: 7px;
+                    left: 0px;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                    // background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+        
+                    @include breakpoint(phone) {
+                        margin-right: 15px;
+                    }
+                    
+                &::before {
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    border-radius: 50%;
+                    background: var(--white);
+                    border: 2px solid var(--gradient-start);
+                }
+        
+                &::after {
+                    content: '';
+                    left: 3px;
+                    top: 4px;
+                    position: absolute;
+                    height: 15px;
+                    width: 15px;
+                    background-image: url('/src/assets/images/Tick.svg');
+                    background-repeat: no-repeat;
+                    background-position: 65% 50%;
+                    
+                }
+            }
+        
+            .back__about {
+                visibility: hidden;
+                position: absolute;
+                top: 48px;
+                left: 5%;
+                width: 288px;
+                height: 56px;
+                padding: 10px 16px 14px 16px;
+                border-radius: 8px;
+                background-color: var(--white);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            }
+    
+            div {
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 16px;
+                padding: 2px 0 0 0;
+        
+                a {
+                   color: var(--green);
+                   border-bottom: 1px dashed var(--light-green); 
+    
+                   &:hover + .back__about {
+                    visibility: visible;
+                   }
+                }
+    
+            }
+    }
+    &__credit {
+    }
+
+    &__delivery {
+        display: flex;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+    
+        @include breakpoint(phone) {
+            margin-top: -2px;
+            margin-bottom: 14px;
+        }
+    
+        h2 {
+            display: block;
+            flex: 1 1 auto;
+        }
+    }
+    &__place {
     }
 }
+
 .total {
-}
-.total__value {
-    margin-right: 3px;
-    letter-spacing: 1%;
-
-    @include breakpoint(phone) {
+    &__value {
+        margin-right: 3px;
+        letter-spacing: 1%;
+    
+        @include breakpoint(phone) {
+            font-size: 20px;
+            line-height: 34px;
+            letter-spacing: -0.05px;
+        }
+    }
+    &__currency {
         font-size: 20px;
-        line-height: 34px;
-        letter-spacing: -0.05px;
-    }
-}
-.total__currency {
-    font-size: 20px;
-    line-height: 36px;
-}
-.info__pieces {
-    display: flex;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-    @include breakpoint(phone) {
-        margin-bottom: -2px;
-    }
-
-    h2 {
-        display: block;
-        flex: 1 1 auto;
+        line-height: 36px;
     }
 }
 .pieces {
-}
-.pieces__value {
-    margin-right: 3px;
-}
-.pieces__currency {
-}
-.info__sale {
-    display: flex;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-
-    h2 {
-        display: block;
-        flex: 1 1 auto;
+    &__value {
+        margin-right: 3px;
+    }
+    &__currency {
     }
 }
 .sale {
@@ -86,158 +205,44 @@
 }
 .sale__currency {
 }
-.info__delivery {
-    display: flex;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 24px;
-
-    @include breakpoint(phone) {
-        margin-top: -2px;
-        margin-bottom: 14px;
-    }
-
-    h2 {
-        display: block;
-        flex: 1 1 auto;
-    }
-}
-.info__place {
-}
 .place {
-}
-.place__edit {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-
-    @include breakpoint(phone) {
-        display: none;
-    }
-}
-.place__edit2 {
-    display: flex;
-    justify-content: space-between;
-
-    @include breakpoint(phone) {
-        display: none;
-    }
-}
-.place__title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 16px;
-}
-.place__button {
-    width: 16px;
-    height: 16px;
-    background-image: url(/src/assets/images/edit.svg);background-color: transparent;
-}
-.place__address {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    margin-bottom: 4px;
-
-    @include breakpoint(phone) {
-        display: none;
-    }
-}
-.info__date {
-    color: var(--magenta);
-    font-size: 13px;
-    line-height: 16px;
-    margin-bottom: 13px;
-
-    @include breakpoint(phone) {
-        display: none;
-    }
-}
-.info__back {
-        padding: 8px 8px 12px 8px;
+    &__edit {
         display: flex;
-        background-color: var(--smoky);
-        border-radius: 8px;
-        margin-bottom: 28px;
-        position: relative;
-
+        justify-content: space-between;
+        margin-bottom: 8px;
+    
         @include breakpoint(phone) {
-            background-color: var(--smoky-dark);
-            margin-bottom: -5px;
+            display: none;
         }
-        
-        span {
-                position: relative;
-                width: 22px;
-                height: 20px;
-                top: 7px;
-                left: 0px;
-                margin-right: 10px;
-                border-radius: 50%;
-                // background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+    }
+    &__edit2 {
+        display: flex;
+        justify-content: space-between;
     
-                @include breakpoint(phone) {
-                    margin-right: 15px;
-                }
-                
-            &::before {
-                content: '';
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                top: 2px;
-                left: 2px;
-                border-radius: 50%;
-                background: var(--white);
-                border: 2px solid var(--gradient-start);
-            }
-    
-            &::after {
-                content: '';
-                left: 3px;
-                top: 4px;
-                position: absolute;
-                height: 15px;
-                width: 15px;
-                background-image: url('/src/assets/images/Tick.svg');
-                background-repeat: no-repeat;
-                background-position: 65% 50%;
-                
-            }
+        @include breakpoint(phone) {
+            display: none;
         }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    &__button {
+        width: 16px;
+        height: 16px;
+        background-image: url(/src/assets/images/edit.svg);background-color: transparent;
+    }
+    &__address {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 4px;
     
-        .back__about {
-            visibility: hidden;
-            position: absolute;
-            top: 48px;
-            left: 5%;
-            width: 288px;
-            height: 56px;
-            padding: 10px 16px 14px 16px;
-            border-radius: 8px;
-            background-color: var(--white);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        @include breakpoint(phone) {
+            display: none;
         }
-
-        div {
-            font-weight: 400;
-            font-size: 13px;
-            line-height: 16px;
-            padding: 2px 0 0 0;
-    
-            a {
-               color: var(--green);
-               border-bottom: 1px dashed var(--light-green); 
-
-               &:hover + .back__about {
-                visibility: visible;
-               }
-            }
-
-        }
-}
-.info__credit {
+    }
 }
 .credit {
 }

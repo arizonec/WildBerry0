@@ -119,47 +119,47 @@
     max-width: 309px;
 }
 .not-info {
-}
-.not-info__name {
-    line-height: 24px;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 8px;
-
-    @include breakpoint(tabphone) {
-        font-size: 14px;
-        line-height: 21px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
-        max-width: 240px;
+    &__name {
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 8px;
+    
+        @include breakpoint(tabphone) {
+            font-size: 14px;
+            line-height: 21px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            max-width: 240px;
+        }
+    
+        @include breakpoint(phone) {
+            max-width: none;
+            font-size: 14px;
+            line-height: 21px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
     }
-
-    @include breakpoint(phone) {
-        max-width: none;
-        font-size: 14px;
-        line-height: 21px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
+    &__param {
+        display: flex;
+        font-weight: 400px;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 8px;
     }
-}
-.not-info__param {
-    display: flex;
-    font-weight: 400px;
-    font-size: 13px;
-    line-height: 16px;
-    margin-bottom: 8px;
-}
-.not-info__color {
-    margin-right: 16px;
-}
-.not-info__size {
-
-    @include breakpoint(phone) {
-        display: none;
+    &__color {
+        margin-right: 16px;
+    }
+    &__size {
+    
+        @include breakpoint(phone) {
+            display: none;
+        }
     }
 }
 .not-item__counter {
