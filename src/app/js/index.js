@@ -297,10 +297,18 @@ const inputSubmit = (e) => {
 
 const formValidation = (event) => {  
     event.preventDefault();
-
+    const mediaQ = window.matchMedia("(max-width: 340px)");
     if(validate(form) === true) {
+    }  
+    if(validate(form) === false) {
+        if (mediaQ.matches) {
+        receiver.scrollIntoView({behavior: "smooth", inline: 'nearest'});
+    } else {
+
+    }
     }
 }
+
 
 const formSubmit = () => {
     form.addEventListener('submit', formValidation);
