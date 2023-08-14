@@ -2,15 +2,19 @@ import '../index.html';
 import '../scss/style.scss';
 import variables from './variables';
 import data from './data';
-import { userInfo } from './userInfo';
+// import { userInfo } from './userInfo';
 
 const state = {
     current:{},
 }
-
 state.current = {...data};
 
 const { main, receiver, submitButton, editPayButton, form, placeDel, placePay, chooseAll, payModal, toAdress, courier, available, editButton, counter, selectItem, minus, number, plus, current, previous, totalPrice, btn, instantPayCheckbox, salePercent, saleClientPercent, saleDif, saleClientDif, hider, hiderNot, modalButton, modalClose, modalBackground, deliveryModal } = variables;
+
+// const phone = /^(\+?7|8) + ?9\d{9}$/
+const phone = /^(\+?7|8)?([- _():=+]?\d[- _():=+]?){10}(\s*)?$/;
+const text = /^[A-ZА-ЯЁ]+$/i;
+const mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 const chooseAllItems = () => {
     chooseAll.classList.toggle('active-all');
@@ -160,11 +164,6 @@ const borderActive = ({ target }) => {
     target.classList.toggle('border-active')
 }
 
-// const phone = /^(\+?7|8) + ?9\d{9}$/
-const phone = /^(\+?7|8)?([- _():=+]?\d[- _():=+]?){10}(\s*)?$/;
-const text = /^[A-ZА-ЯЁ]+$/i;
-const mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
 const validate = (form) => {
     let result = true;
 
@@ -303,12 +302,9 @@ const formValidation = (event) => {
     if(validate(form) === false) {
         if (mediaQ.matches) {
         receiver.scrollIntoView({behavior: "smooth", inline: 'nearest'});
-    } else {
-
-    }
+        }
     }
 }
-
 
 const formSubmit = () => {
     form.addEventListener('submit', formValidation);
@@ -332,88 +328,4 @@ courier.addEventListener('click', borderActive);
 placeDel.addEventListener('click', openAddress);
 placePay.addEventListener('click', openPay);
 submitButton.addEventListener('click', formSubmit)
-// const keyValid = () => {
-//     form.addEventListener('submit', keyValidate)
-// }
 
-// const keyValidate = (event) => {
-//     event.preventDefault();
-
-//     if(keyValidForm(form) === true) {
-//     }
-// }
-
-// const keyValidForm = (form) => {
-//     let result = true;
-//     const phone = /^(\+?7|8) + ?9\d{9}$/
-//     const text = /^[A-ZА-ЯЁ]+$/i;
-//     const mail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-//     form.querySelectorAll('input').forEach(input => {
-//         if(input.value === '') {
-//             input.previousElementSibling.classList.remove('active-hat');
-//             input.nextElementSibling.classList.add('error');
-//             result = false;
-//         } 
-//         if((input.value !== '')) {
-//             input.previousElementSibling.classList.add('active-hat');
-//             input.nextElementSibling.classList.remove('error');
-//             result = true;
-//         }
-
-
-
-//         if((input.classList.contains('name__name-input'))) {
-//             if(text.test(input.value) === false) {
-//                 input.classList.add('error');
-//                 input.nextElementSibling.classList.add('error');
-//             }
-//             if(text.test(input.value) === true) {
-//                 input.classList.remove('error');
-//                 input.nextElementSibling.classList.remove('error');
-//             }
-//         }
-//         if((input.classList.contains('name__second-input'))) {
-//             if(text.test(input.value) === false) {
-//                 input.classList.add('error');
-//                 input.nextElementSibling.classList.add('error');
-//             }
-//             if(text.test(input.value) === true) {
-//                 input.classList.remove('error');
-//                 input.nextElementSibling.classList.remove('error');
-//             }
-//         }
-//         if((input.classList.contains('more-email'))) {
-//             if(mail.test(input.value) === false) {
-//                 input.classList.add('error');
-//                 input.nextElementSibling.classList.add('error');
-//             }
-//             if(mail.test(input.value) === true) {
-//                 input.classList.remove('error');
-//                 input.nextElementSibling.classList.remove('error');
-//             }
-//         }
-//         if((input.classList.contains('more-tel'))) {
-//             if(phone.test(input.value) === false) {
-//                 input.classList.add('error');
-//                 input.nextElementSibling.classList.add('error');
-//             }
-//             if(phone.test(input.value) === true) {
-//                 input.classList.remove('error');
-//                 input.nextElementSibling.classList.remove('error');
-//             }
-//         }
-//         if((input.classList.contains('more-number'))) {
-//             if(input.value.length !== 14) {
-//                 input.classList.add('error');
-//                 input.nextElementSibling.classList.add('error');
-//             }
-//             if(input.value.length === 14) {
-//                 input.classList.remove('error');
-//                 input.nextElementSibling.classList.remove('error');
-//             }
-//         }
-//     })
-
-//     return result;
-// }
