@@ -1,13 +1,12 @@
 export default {
     chooseAll: document.querySelector('.choose-all__checkbox'),
-    selectItem: document.querySelectorAll('.item__photo'),
     available: document.querySelector('.available__choose-item'),
     minus: document.querySelectorAll('.count__number-minus'),
     number: document.querySelectorAll('.count__number-num'),
     previous: document.querySelectorAll('.previous__value'),
     current: document.querySelectorAll('.current__value'),
     totalPrice: document.querySelector('.total__value'),
-    instantPayCheckbox: document.querySelector('.input__checkbox'), 
+    instantPayCheckbox: document.querySelector('.input__checkbox'),
     btn: document.querySelector('.bill__button-btn'),
     salePercent: document.querySelectorAll('.sale-perc'),
     saleClientPercent: document.querySelectorAll('.sale__client-perc'),
@@ -28,5 +27,7 @@ export default {
     placePay: document.querySelector('.place__button-pay'),
     submitButton: document.querySelector('.bill__button'),
     form: document.getElementById('form'),
-    receiver: document.querySelector('.bucket__receiver')
+    receiver: document.querySelector('.bucket__receiver'),
+    bucketCounter: document.querySelector('.about__bucket-counter'),
+    remove: document.querySelectorAll('.count__remove')
 };

@@ -53,6 +53,10 @@
         position: relative;
         cursor: pointer;
 
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+
         @include breakpoint(tablet) {
             display: none;
         }
@@ -189,6 +193,11 @@
     height: 48px;
     background: var(--search-bar);
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background: var(--search-bar-hover);
+    }
 
     @include breakpoint(tablet) {
         display: none;
@@ -218,11 +227,15 @@
         }
     }
 
-    img {
+    svg {
         display: inline-block;
         opacity: 0.4;
         width: 22px;
         height: 22px;
+        
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 .about {
@@ -268,8 +281,7 @@
             padding: 0 10px 0 0;
         }
 
-        &::after {
-            content: '3';
+        &-counter {
             width: 16px;
             height: 16px;
             position: absolute;
