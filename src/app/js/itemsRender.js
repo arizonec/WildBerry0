@@ -48,7 +48,7 @@ export const renderItems = (items) => {
                             <div class="count__number-num" id="${item.id}">${item.value}</div>
                             <div class="count__number-plus active-color">+</div>
                         </div>
-                        <div class="count__left">Осталось ${item.left} шт.</div>
+                        <div class="count__left">${item.left < 3 ? `Осталось ${item.left < 3 ? item.left : ''} шт.` : ''}</div>
                         <div class="count__liked">
                             <!-- <img class="count__like" src="/src/assets/images/Like.svg" alt=""> -->
                                 <svg class="count__like" width="20" height="20" viewBox="0 0 20 20"

@@ -2,7 +2,9 @@ import '../index.html';
 import '../scss/style.scss';
 import variables from './variables';
 import data from './data';
+import posts from './posts';
 import { renderItems } from './itemsRender';
+import { dependOnNum, dataWords } from "./words";
 // import { userInfo } from './userInfo';
 
 const state = {
@@ -10,7 +12,7 @@ const state = {
 }
 state.current = [...data];
 
-const { main, remove, receiver, submitButton, bucketCounter, editPayButton, form, placeDel, placePay, chooseAll, payModal, toAdress, courier, available, editButton, counter, selectItem, minus, number, plus, current, previous, totalPrice, btn, instantPayCheckbox, salePercent, saleClientPercent, saleDif, saleClientDif, hider, hiderNot, modalButton, modalClose, modalBackground, deliveryModal } = variables;
+const { main, remove, deliveryModalBtn, payModalList, receiver, submitButton, bucketCounter, editPayButton, form, placeDel, placePay, chooseAll, payModal, toAdress, courier, available, editButton, counter, selectItem, minus, number, plus, current, previous, totalPrice, btn, instantPayCheckbox, salePercent, saleClientPercent, saleDif, saleClientDif, hider, hiderNot, modalButton, modalClose, modalBackground, deliveryModal } = variables;
 
 // const phone = /^(\+?7|8) + ?9\d{9}$/
 const phone = /^(\+?7|8)?([- _():=+]?\d[- _():=+]?){10}(\s*)?$/;
@@ -39,26 +41,22 @@ const renderAgain = (id) => {
 }
 
 const chooseAllItems = () => {
-    chooseAll.classList.toggle('active-all');
-    if (chooseAll.classList.contains('active-all')) {
-        state.current.forEach(function (checkbox) {
-            if (state.current.choosen === false) {
-                checkbox.classList.add('selected');
-            }
-        })
-    } else {
-        state.current.forEach(function (checkbox) {
-            if (state.current.choosen === true) {
-                checkbox.classList.remove('selected');
-            }
-        })
-    }
+    // state.current.forEach(obj => obj.choosen = true);????????????????????????????????????
 }
 
 const selectOne = ({ target }) => {
-    if (target.classList.contains('item__photo')) {
-        target.classList.toggle('selected');
+    const elem = target;
+    const targeted = elem.closest('.available__item').id;
+    const item = state.current.find(item => item.globalId == targeted);
+    if (!item.choosen) {
+        target.classList.add('selected');
+        item.choosen = true;
+    } else {
+        target.classList.remove('selected');
+        item.choosen = false;
     }
+
+    console.log(state.current)
 }
 
 const renderNumber = () => {
@@ -347,8 +345,19 @@ const elemRemove = ({ target }) => {
 }
 
 const billUpdate = () => {
+    const piecesValue = document.querySelector('.pieces__value')
+    const saleValue = document.querySelector('.sale__value')
     const totalValue = document.querySelector('.total__value');
+    const totalItems = document.querySelector('.info__h2');
+    const totalValues = state.current.reduce((sum, elem) => sum + elem.value, 0)
+    const word = dependOnNum(totalValues, dataWords('товар'));
+    totalItems.innerHTML = `${totalValues} ${word}`;
     totalValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.total, 0);
+    piecesValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.saleTotal, 0);
+    saleValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.total, 0) - state.current.reduce((sum, elem) => sum + elem.saleTotal, 0);
+}
+
+const postChoose = ({ target }) => {
 }
 
 chooseAll.addEventListener('click', chooseAllItems);
@@ -371,4 +380,5 @@ placeDel.addEventListener('click', openAddress);
 placePay.addEventListener('click', openPay);
 submitButton.addEventListener('click', formSubmit);
 document.addEventListener('click', elemRemove);
+deliveryModalBtn.addEventListener('click', postChoose)
 

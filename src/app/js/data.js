@@ -14,7 +14,7 @@ export default [
         adress: 'Коледино WB',
         company: 'ООО Вайлдберриз',
         imageUrl: 'Pic1.svg',
-        choosen: false,
+        choosen: true,
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ export default [
         adress: 'Коледино WB',
         company: 'ООО Мегапрофстиль',
         imageUrl: 'Pic2.svg',
-        choosen: false,
+        choosen: true,
     },
     {
         id: 3,
@@ -48,6 +48,7 @@ export default [
         adress: 'Коледино WB',
         company: 'ООО Вайлдберриз',
         imageUrl: 'Pic3.svg',
-        choosen: false,
+        choosen: true,
     },
+
 ]
