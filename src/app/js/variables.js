@@ -5,6 +5,7 @@ export default {
     number: document.querySelectorAll('.count__number-num'),
     previous: document.querySelectorAll('.previous__value'),
     current: document.querySelectorAll('.current__value'),
+    selectItem: document.querySelectorAll('.item__photo'),
     totalPrice: document.querySelector('.total__value'),
     instantPayCheckbox: document.querySelector('.input__checkbox'),
     btn: document.querySelector('.bill__button-btn'),

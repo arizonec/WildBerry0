@@ -40,23 +40,52 @@ const renderAgain = (id) => {
     renderList();
 }
 
-const chooseAllItems = () => {
-    // state.current.forEach(obj => obj.choosen = true);????????????????????????????????????
-}
+// const selectOne = ({ target }) => {
+//     const elem = target;
+//     const targeted = elem.closest('.available__item').id;
+//     const item = state.current.find(item => item.globalId == targeted);
+//     if (!item.choosen) {
+//         target.classList.add('selected');
+//         item.choosen = true;
+//     } else {
+//         target.classList.remove('selected');
+//         item.choosen = false;
+//     }
+// }
+
+// const chooseAllItems = () => {
+//     chooseAll.classList.add('active-all');
+//     state.current.forEach((item) => item.choosen = true);
+
+//     if (state.current.every((item) => item.choosen == true)) {
+//         chooseAll.classList.add('active-all');
+//     } else {
+//         chooseAll.classList.remove('active-all');
+//     }
+//     console.log(state.current)
+// }
 
 const selectOne = ({ target }) => {
-    const elem = target;
-    const targeted = elem.closest('.available__item').id;
-    const item = state.current.find(item => item.globalId == targeted);
-    if (!item.choosen) {
-        target.classList.add('selected');
-        item.choosen = true;
-    } else {
-        target.classList.remove('selected');
-        item.choosen = false;
+    if (target.classList.contains('item__photo')) {
+        target.classList.toggle('selected');
     }
+}
+const chooseAllItems = () => {
+    chooseAll.classList.toggle('active-all');
+    const selectItem = document.querySelectorAll('.item__photo');
 
-    console.log(state.current)
+    if (chooseAll.classList.contains('active-all')) {
+        selectItem.forEach(function (checkbox) {
+            checkbox.classList.add('selected');
+            state.current.forEach((item) => item.choosen = true);
+        })
+
+    } else {
+        selectItem.forEach(function (checkbox) {
+            checkbox.classList.remove('selected');
+            state.current.forEach((item) => item.choosen = false);
+        })
+    }
 }
 
 const renderNumber = () => {
@@ -352,19 +381,25 @@ const billUpdate = () => {
     const totalValues = state.current.reduce((sum, elem) => sum + elem.value, 0)
     const word = dependOnNum(totalValues, dataWords('товар'));
     totalItems.innerHTML = `${totalValues} ${word}`;
-    totalValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.total, 0);
+    // totalValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.total, 0);
+    let counters = 0;
+    state.current.forEach((elem) => {
+        if (elem.choosen === true) {
+            counters += elem.total;
+        } else {
+            counters -= elem.total;
+        }
+    });
+    totalValue.innerHTML = counters;
     piecesValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.saleTotal, 0);
     saleValue.innerHTML = state.current.reduce((sum, elem) => sum + elem.total, 0) - state.current.reduce((sum, elem) => sum + elem.saleTotal, 0);
-}
-
-const postChoose = ({ target }) => {
 }
 
 chooseAll.addEventListener('click', chooseAllItems);
 available.addEventListener('click', selectOne);
 chooseAll.addEventListener('click', renderNumber)
-chooseAll.addEventListener('click', renderCurrent)
-chooseAll.addEventListener('click', renderPrevious)
+// chooseAll.addEventListener('click', renderCurrent)
+// chooseAll.addEventListener('click', renderPrevious)
 document.addEventListener('DOMContentLoaded', renderData);
 document.addEventListener('click', counterFunction);
 instantPayCheckbox.addEventListener('click', instantPay);
@@ -380,5 +415,5 @@ placeDel.addEventListener('click', openAddress);
 placePay.addEventListener('click', openPay);
 submitButton.addEventListener('click', formSubmit);
 document.addEventListener('click', elemRemove);
-deliveryModalBtn.addEventListener('click', postChoose)
+// deliveryModalBtn.addEventListener('click', postChoose)
 
