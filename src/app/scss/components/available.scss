@@ -654,21 +654,22 @@
         justify-content: flex-end;
         position: relative;
         cursor: pointer;
+        text-decoration: line-through;
     
         &:hover .price__difference {
             visibility: visible;
         }
     
-        &::before {
-            content: '';
-            position: absolute;
-            width: 54px;
-            height: 1px;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--light-gray);
-        }
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     width: 54px;
+        //     height: 1px;
+        //     right: 0;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     background-color: var(--light-gray);
+        // }
     
         .value {
             font-weight: 400;

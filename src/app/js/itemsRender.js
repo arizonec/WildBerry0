@@ -8,18 +8,18 @@ export const renderItems = (items) => {
 
         `<div class="available__item item" id="${item.globalId}">
             <div class="item__about">
-                <div class="item__photo active-size choosen selected ">
+                <div class="item__photo choosen selected ">
                     <img src="${require(`../../assets/images/${item.imageUrl}`)}" alt="">
                         <input type="checkbox">
                         </div>
                         <div class="item__info info">
                             <div class="item__price1 price">
                                 <div class="price__current">
-                                    <h3 class="value">${item.price * item.value}</h3>
+                                    <h3 class="value">${item.total}</h3>
                                     <h4 class="currency">сом</h4>
                                 </div>
                                 <div class="price__previous">
-                                    <p class="value ">${item.sale_price * item.value}</p>
+                                    <p class="value ">${item.saleTotal}</p>
                                     <p class="currency">сом</p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ export const renderItems = (items) => {
                                 <div class="count__number-num-mobile">1</div>
                                 <div class="count__number-plus active-color">+</div>
                             </div>
-                            <div class="count__left">Осталось 2 шт.</div>
+                            <div class="count__left">${item.left < 3 ? `Осталось ${item.left < 3 ? item.left : ''} шт.` : ''}</div>
                             <div class="count__liked">
                                 <!-- <div class="count__like"><img src="/src/assets/images/Like.svg" alt=""></div> -->
                                 <svg class="count__like" width="20" height="20" viewBox="0 0 20 20"

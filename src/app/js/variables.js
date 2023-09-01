@@ -17,7 +17,7 @@ export default {
     // modalClose: document.querySelectorAll('.modal__button'),
     // modalButton: document.querySelectorAll('.delivery__modal-btn'),
     deliveryModal: document.querySelector('.delivery__modal'),
-    deliveryModalBtn: document.querySelector('.delivery__btn'),
+    deliveryModalBtn: document.querySelector('.delivery__modal-btn'),
     modalBackground: document.querySelector('.modal__back'),
     editButton: document.querySelector('.edit__button'),
     editPayButton: document.querySelector('.pay__edit-button'),
@@ -32,5 +32,8 @@ export default {
     form: document.getElementById('form'),
     receiver: document.querySelector('.bucket__receiver'),
     bucketCounter: document.querySelector('.about__bucket-counter'),
-    remove: document.querySelectorAll('.count__remove')
+    remove: document.querySelectorAll('.count__remove'),
+    payModalInputs: document.querySelector('.delivery__modal-cards'),
+    adressBtn: document.querySelector('.to-adress'),
+    courierBtn: document.querySelector('.by-courier'),
 };
