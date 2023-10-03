@@ -36,7 +36,7 @@ export default [
     {
         id: 3,
         globalId: 31,
-        title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
+        title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, <br/> Faber-Castell',
         color: '',
         size: '',
         price: 123.5,

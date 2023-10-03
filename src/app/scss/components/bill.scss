@@ -10,6 +10,7 @@
     margin-bottom: 24px;
 }
 .info {
+
     &__total {
         display: flex;
         font-weight: 700;
@@ -27,6 +28,7 @@
         h2 {
             display: block;
             flex: 1 1 auto;
+            letter-spacing: -0.02px;
         }
     }
 
@@ -35,6 +37,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
+        margin-bottom: -2px;
     
         @include breakpoint(phone) {
             margin-bottom: -2px;
@@ -51,6 +54,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 28px;
+        margin-bottom: -2px;
     
         h2 {
             display: block;
@@ -159,7 +163,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        margin-bottom: 24px;
+        margin-bottom: 28px;
     
         @include breakpoint(phone) {
             margin-top: -2px;

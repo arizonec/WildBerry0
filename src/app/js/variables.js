@@ -26,6 +26,7 @@ export default {
     courier: document.querySelector('.by-courier'),
     payModal: document.querySelector('.pay__modal'),
     payModalList: document.querySelector('.pay__modal-list'),
+    payModalListSecond: document.querySelector('.pay__modal-list-punkt'),
     placeDel: document.querySelector('.place__button-delivery'),
     placePay: document.querySelector('.place__button-pay'),
     submitButton: document.querySelector('.bill__button'),

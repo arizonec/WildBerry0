@@ -5,7 +5,6 @@ export const renderItems = (items) => {
 
 
     let html = items.map((item) =>
-
         `<div class="available__item item" id="${item.globalId}">
             <div class="item__about">
                 <div class="item__photo choosen selected ">
@@ -24,7 +23,7 @@ export const renderItems = (items) => {
                                 </div>
                             </div>
                             <div class="info__name">${item.title}</div>
-                            <div class="info__param">
+                            <div class="info__param" style="${!item.color && 'margin-bottom: 0px'}">
                                 ${item.color.length !== 0 ? `<div class="info__color">Цвет: ${item.color}</div>` : ''}
                                 ${item.size.length !== 0 ? `<div class="info__size">Размер: ${item.size}</div>` : ''}
                             </div>
@@ -123,8 +122,11 @@ export const renderItems = (items) => {
                             </div>
                         </div>
                     </div>
-                </div>`
+        </div>`
     );
-    itemsList.insertAdjacentHTML('beforeend', html);
-};
 
+
+    html.forEach(item => {
+        itemsList.innerHTML += item;
+    });
+};

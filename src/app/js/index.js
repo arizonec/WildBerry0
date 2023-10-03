@@ -5,7 +5,7 @@ import data from './data';
 import { openPay } from './modals/payModal';
 import { openAddress } from './modals/deliveryModal';
 import { renderItems } from './itemsRender';
-import { postAdress, inputCheck } from './modals/deliveryModal'
+import { postAdress, inputCheck, chooseDeliveryOption } from './modals/deliveryModal'
 import { postPayInfo, inputCheckPay } from './modals/payModal'
 import { formSubmit } from './validation.js/validate';
 import { modalBackClose, modalCloseClose, modal, modalC } from './modals/modal';
@@ -18,11 +18,12 @@ const state = {
 }
 state.current = [...data];
 
-const { payModalInputs, payModalList, adressBtn, courierBtn, submitButton, bucketCounter, editPayButton, placeDel, placePay, chooseAll, toAdress, courier, available, editButton, number, instantPayCheckbox, hider } = variables;
+const { payModalInputs, payModalList, payModalListSecond, adressBtn, courierBtn, submitButton, bucketCounter, editPayButton, placeDel, placePay, chooseAll, toAdress, courier, available, editButton, number, instantPayCheckbox, hider } = variables;
 
 const renderList = () => {
     renderItems(state.current);
-    bucketCounter.innerHTML = state.current.length;
+    let value = document.querySelector('.info__h2').innerHTML;
+    bucketCounter.innerHTML = parseInt(value);
 }
 renderList();
 
@@ -32,11 +33,6 @@ export const renderAgain = (id) => {
     billUpdate(state.current);
 
     document.querySelector('.available__choose-item').innerHTML = '';
-
-    const renderList = () => {
-        renderItems(state.current);
-        bucketCounter.innerHTML = state.current.length;
-    }
 
     renderList();
 }
@@ -101,6 +97,7 @@ document.addEventListener('click', (e) => {
     counterFunction(e, state.current)
 });
 instantPayCheckbox.addEventListener('click', instantPay);
+document.addEventListener('click', chooseDeliveryOption);
 hider.addEventListener('click', hideAll);
 document.addEventListener('click', payCheck);
 editButton.addEventListener('click', openAddress);
@@ -119,3 +116,6 @@ payModalInputs.addEventListener('click', inputCheckPay)
 payModalInputs.addEventListener('click', postPayInfo)
 payModalList.addEventListener('click', postAdress)
 payModalList.addEventListener('click', inputCheck)
+payModalListSecond.addEventListener('click', postAdress)
+payModalListSecond.addEventListener('click', inputCheck)
+

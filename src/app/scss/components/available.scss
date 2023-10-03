@@ -277,6 +277,7 @@
                 background-image: url('/src/assets/images/Input.svg');
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
+                border: none;
         
                 @include breakpoint(phone) {
                    background-color: var(--white);
@@ -493,24 +494,32 @@
     
         &-minus{
             position: absolute;
+            width: 9px;
+            height: 10px;
+            cursor: pointer;
             left: 16px;
-            top: 48%;
+            top: 40%;
             transform: translateX(-50%);
+        }
+
+        &-minus::before {
+            position: absolute;
+            content: '';
             width: 9px;
             height: 1px;
+            left: 0;
+            top: 38%;
             background: var(--rulers);
-            cursor: pointer;
         }
     
         &-num{
             color: var(--black);
             font-size: 15px;
-            padding: 3px 0 0 0;
         }
     
         &-plus{
             position: absolute;
-            right: 15px;
+            right: 14px;
             top: 18%;
             width: 5px;
             height: 5px;
@@ -975,6 +984,22 @@
             margin-right: 16px;
         
             &-minus{
+                position: absolute;
+                width: 9px;
+                height: 10px;
+                cursor: pointer;
+                left: 16px;
+                top: 40%;
+                transform: translateX(-50%);
+            }
+    
+            &-minus::before {
+                position: absolute;
+                content: '';
+                width: 9px;
+                height: 1px;
+                left: 0;
+                top: 38%;
                 background: var(--rulers);
             }
         
