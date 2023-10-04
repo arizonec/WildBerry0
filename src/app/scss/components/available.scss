@@ -593,6 +593,12 @@
                     fill: var(--magenta);
                 }
         }
+
+        .liked {
+            svg{
+                background-color: greenyellow;
+            }
+        }
     
     
         @include breakpoint(phone) {

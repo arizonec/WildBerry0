@@ -97,7 +97,11 @@ document.addEventListener('click', (e) => {
     counterFunction(e, state.current)
 });
 
-
+const favorites = ({ target }) => {
+    if (target.classList.contains('count__like')) {
+        target.classList.toggle('liked');
+    }
+}
 
 
 instantPayCheckbox.addEventListener('click', instantPay);
@@ -122,4 +126,5 @@ payModalList.addEventListener('click', postAdress)
 payModalList.addEventListener('click', inputCheck)
 payModalListSecond.addEventListener('click', postAdress)
 payModalListSecond.addEventListener('click', inputCheck)
+document.addEventListener('click', favorites)
 
