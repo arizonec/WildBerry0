@@ -96,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('click', (e) => {
     counterFunction(e, state.current)
 });
+
+
+
+
 instantPayCheckbox.addEventListener('click', instantPay);
 document.addEventListener('click', chooseDeliveryOption);
 hider.addEventListener('click', hideAll);

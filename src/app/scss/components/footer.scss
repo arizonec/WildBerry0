@@ -21,7 +21,7 @@
     line-height: 16px;
     text-align: center;
     color: var(--light-white);
-    letter-spacing: 1%;
+    letter-spacing: 0.1px;
 
     @include breakpoint(phone) {
        padding: 40px 0 90px 0;

@@ -14,8 +14,6 @@ export default {
     saleDif: document.querySelectorAll('.sale-dif'),
     saleClientDif: document.querySelectorAll('.sale__client-dif'),
     hider: document.querySelector('.choose-all__hide'),
-    // modalClose: document.querySelectorAll('.modal__button'),
-    // modalButton: document.querySelectorAll('.delivery__modal-btn'),
     deliveryModal: document.querySelector('.delivery__modal'),
     deliveryModalBtn: document.querySelector('.delivery__modal-btn'),
     modalBackground: document.querySelector('.modal__back'),
